@@ -152,21 +152,41 @@
         };
       };
       display = {
-        binaryPrefix = "si";
+        size.binaryPrefix = "si";
         color = "blue";
         separator = "  ";
       };
       modules = [
-        {
-          type = "datetime";
-          key = "Date";
-          format = "{1}-{3}-{11}";
-        }
+        #{
+        #  type = "";
+        #  key = "OS";
+        #  format = "";
+        #}
         {
           type = "datetime";
           key = "Time";
           format = "{14}:{17}:{20}";
         }
+        {
+          type = "datetime";
+          key = "Date";
+          format = "{1}-{3}-{11}";
+        }
+        #{
+        #  type = "";
+        #  key = "";
+        #  format = "";
+        #}
+        #{
+        #  type = "";
+        #  key = "";
+        #  format = "";
+        #}
+        #{
+        #  type = "";
+        #  key = "";
+        #  format = "";
+        #}
         "break"
         "player"
         "media"
@@ -252,7 +272,7 @@
       "workbench.preferredDarkColorTheme"= "Solarized Dark";
       "workbench.preferredLightColorTheme"= "Solarized Light";
       "window.autoDetectColorScheme"= true;
-      "workbench.colorTheme"= "Solarized Dark";
+      "workbench.colorTheme"= "Solarized D/ark";
       "keyboard.dispatch"= "keyCode";
       "workbench.icontheme"= "vscode-icons";
       "git.enableCommitSigning"= true;
