@@ -153,15 +153,10 @@
       };
       display = {
         size.binaryPrefix = "si";
-        color = "blue";
-        separator = "  ";
+        color = "green";
+        separator = ": ";
       };
       modules = [
-        #{
-        #  type = "";
-        #  key = "OS";
-        #  format = "";
-        #}
         {
           type = "datetime";
           key = "Time";
@@ -174,17 +169,32 @@
         }
         #{
         #  type = "";
-        #  key = "";
+        #  key = "CPU";
         #  format = "";
         #}
         #{
         #  type = "";
-        #  key = "";
+        #  key = "Memory";
         #  format = "";
         #}
         #{
         #  type = "";
-        #  key = "";
+        #  key = "OS";
+        #  format = "";
+        #}
+        #{
+        #  type = "";
+        #  key = "Kernel";
+        #  format = "";
+        #}
+        #{
+        #  type = "";
+        #  key = "Shell";
+        #  format = "";
+        #}
+        #{
+        #  type = "";
+        #  key = "DE";
         #  format = "";
         #}
         "break"
