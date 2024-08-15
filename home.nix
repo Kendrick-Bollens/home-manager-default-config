@@ -146,7 +146,8 @@
     enable = true;
     settings = {
       logo = {
-        source = "nixos_small";
+        source = "nixos";
+        type= "small";
         padding = {
           right = 1;
         };
@@ -158,48 +159,30 @@
       };
       modules = [
         {
-          type = "datetime";
-          key = "Time";
-          format = "{14}:{17}:{20}";
+          type = "os";
+          key = "OS";
         }
         {
-          type = "datetime";
-          key = "Date";
-          format = "{1}-{3}-{11}";
+          type = "kernel";
+          key = "Kernel";
         }
-        #{
-        #  type = "";
-        #  key = "CPU";
-        #  format = "";
-        #}
-        #{
-        #  type = "";
-        #  key = "Memory";
-        #  format = "";
-        #}
-        #{
-        #  type = "";
-        #  key = "OS";
-        #  format = "";
-        #}
-        #{
-        #  type = "";
-        #  key = "Kernel";
-        #  format = "";
-        #}
-        #{
-        #  type = "";
-        #  key = "Shell";
-        #  format = "";
-        #}
-        #{
-        #  type = "";
-        #  key = "DE";
-        #  format = "";
-        #}
+        {
+          type = "shell";
+          key = "Shell";
+        }
+        {
+          type = "de";
+          key = "DE";
+        }
         "break"
-        "player"
-        "media"
+        {
+          type = "cpu";
+          key = "CPU";
+        }
+        {
+          type = "memory";
+          key = "Memory";
+        }
       ];
     };
   };
