@@ -7,7 +7,6 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-
   #Allowing non free packages to be installed
   nixpkgs = {
     config = {
@@ -23,12 +22,11 @@
       ventoy
       wireguard-tools
       rustup
-
+  
       #zsh
       zsh-powerlevel10k
       interception-tools-plugins.caps2esc
-
-
+  
       #gui packages
       rpi-imager
       tailscale-systray
@@ -41,32 +39,21 @@
       anki
       orca-slicer
       
-
-
       # gnome
       gnome-tweaks
       gnomeExtensions.gsconnect
       gnomeExtensions.caffeine
-      
       gnomeExtensions.blur-my-shell
-      
       gnomeExtensions.vitals
-      
       gnomeExtensions.coverflow-alt-tab
-      
       gnomeExtensions.burn-my-windows
-      
       #gnomeExtensions.pano
       gnomeExtensions.clipboard-indicator
-      
       gnomeExtensions.grand-theft-focus
-      
       gnomeExtensions.ddterm
-      
       gnomeExtensions.appindicator
       gnomeExtensions.quick-settings-tweaker
-
-
+  
     # You can also create simple shell scripts directly inside your
     # configuration. For example, this adds a command 'my-hello' to your
     # environment:
@@ -88,10 +75,8 @@
     initExtra = "
       [[ ! -f ${./p10k-config/p10k.zsh} ]] || source ${./p10k-config/p10k.zsh}
       fastfetch
-
     ";
-
-
+   
     #plugin config hard way 
     plugins = [
       {
@@ -110,7 +95,6 @@
         src = pkgs.zsh-powerlevel10k;
         file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
       }
-
       {
         name = "enhancd";
         src = pkgs.fetchFromGitHub {
@@ -139,7 +123,6 @@
         };
       }
     ];
-
   };
 
   programs.fastfetch = {
@@ -274,7 +257,6 @@
   };
   programs.firefox = {
     enable = true;
-
     profiles.default= {
       id = 0;
       name = "default";
@@ -495,7 +477,6 @@
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
-
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
     #   org.gradle.console=verbose
@@ -506,7 +487,7 @@
   dconf = { # use "dconf watch /" for checkin what changes when toggling settings in gnome
     enable = true;
     settings = {
-
+   
         # enable dark mode by default
       #"org/gnome/desktop/interface".color-scheme = "prefer-dark";
       
@@ -519,7 +500,7 @@
       sources = [ ( lib.hm.gvariant.mkTuple [ "xkb" "eu" ]) ( lib.hm.gvariant.mkTuple [ "xkb" "us+altgr-intl" ]) ];
       xkb-options = [ "terminate:ctrl_alt_bksp" "caps:escape"];
       }; 
-
+   
       # enable these extensions
       "org/gnome/shell".enabled-extensions = [
         "burn-my-windows@schneegans.github.com" 
@@ -546,23 +527,19 @@
       
       # disabling the blur applications feature for blur my shell because it sometimes hides the window on the external monitor
       "org/gnome/shell/extensions/blur-my-shell/applications".blur = false; 
-
+   
       #ddterm settings
       "com/github/amezin/ddterm".hide-when-focus-lost = true;
       "com/github/amezin/ddterm".hide-window-on-esc = true;
       "com/github/amezin/ddterm".foreground-color = "rgb(51,209,122)";
-
+   
       #make pano the super v key or clippboard indicator
       "org/gnome/shell/keybindings".toggle-message-tray =["<Super>z"];
       "org/gnome/shell/extensions/pano".global-shortcut = ["<Super>v"];
       "org/gnome/shell/extensions/clipboard-indicator".toggle-menu = ["<Super>v"];
-
-
-
+   
       # disable panos anoying notfication
       "org/gnome/shell/extensions/pano".send-notification-on-copy = false;
-
-      
       "org/gnome/shell/extensions/burn-my-windows".active-profile = "/home/kenny/.config/burn-my-windows/profiles/custom.conf";
     };
   };
@@ -611,8 +588,5 @@
       EOF
     '';
   };
-
   
-
-
 }
